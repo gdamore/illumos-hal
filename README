@@ -1,0 +1,34 @@
+illumos-hal README - Sep 24, 2014.
+
+Copyright 2014 Garrett D'Amore <garrett@damore.org>
+
+This tree is an extraction of some of the HAL code from illumos-gate.
+
+These are utilities that are needed for integrating illumos with desktop
+software. Specifically, this software is necessary for integration with
+the X server, and also with various freedesktop.org components.  It's likely
+that these bits are of little use for a server installation.  You will want
+these bits if you want to make use of automatic removable media handling, or
+want the support for rmformat, eject, etc.  Again, these are rarely useful for
+server installations.
+
+The idea is that this represents a new "consolidation" separate from illumos
+proper, so that distributions that have no need for these bits can dispense
+with them.  This is especially useful as these bits have dependencies which
+bring in various GPL and LGPL licensed components.
+
+This builds like illumos-gate, and has packages.  However, it needs the
+following to be installed on the build system:
+
+	* pkg:/system/header/header-audio
+	* pkg:/developer/build/onbld
+	* pkg:/library/glib2
+	* pkg:/library/libxml2
+	* pkg:/library/libxslt
+	* pkg:/system/library/dbus
+	* pkg:/system/library/libdbus
+	* pkg:/system/library/libdbus-glib
+
+Also, you'll need the appropriate C compiler.  It should use the
+same as illumos-gate to build.
+
