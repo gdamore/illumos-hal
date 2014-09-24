@@ -208,10 +208,10 @@ PKGDEP_TOKENS= $(PKGDEP_TOKENS_$(PKGMACH))
 # dependency types, so that they can be included by either an
 # incorporation or a group package.
 #
-$(PDIR)/audio-incorporation.mog:= PKGDEP_TYPE= incorporate
+$(PDIR)/hal-incorporation.mog:= PKGDEP_TYPE= incorporate
 #
 PKGDEP_INCORP= \
-	depend fmri=consolidation/audio-incorporation type=require
+	depend fmri=consolidation/hal-incorporation type=require
 
 #
 # All packaging build products should go into $(PDIR), so they don't
@@ -236,7 +236,7 @@ PROC_PKGS= $(PKGS:%=$(PDIR)/%.mog)
 # build rules and dependencies.  The synthetic and real packages use
 # different sets of transforms and macros for pkgmogrify.
 #
-SYNTH_PKGS= audio-incorporation
+SYNTH_PKGS= hal-incorporation
 DEP_SYNTH_PKGS= $(SYNTH_PKGS:%=$(PDIR)/%.dep)
 PROC_SYNTH_PKGS= $(SYNTH_PKGS:%=$(PDIR)/%.mog)
 
@@ -677,7 +677,7 @@ stage-licenses: license-list FRC
 protocmp: makesilent
 	@validate_pkg -a $(PKGMACH) -v \
 		$(EXCEPTIONS:%=-e $(CODEMGR_WS)/exception_lists/%) \
-		-m $(PDIR) -p $(PKGROOT) -p $(TOOLSROOT)
+		-m $(PDIR) -p $(PKGROOT)
 
 pmodes: makesilent
 	@validate_pkg -a $(PKGMACH) -M -m $(PDIR) \

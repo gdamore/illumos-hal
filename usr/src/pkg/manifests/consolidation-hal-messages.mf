@@ -12,18 +12,22 @@
 #
 # Copyright 2014 Garrett D'Amore <garrett@damore.org>
 #
-set name=pkg.fmri value=pkg:/consolidation/audio/messages@$(PKGVERS)
+set name=pkg.fmri value=pkg:/consolidation/hal/messages@$(PKGVERS)
 set name=pkg.description \
     value="Localizable messages for audio utilities consolidation"
-set name=pkg.summary value="Localizable audio utilities messages"
+set name=pkg.summary value="Localizable HAL messages"
 set name=info.classification \
     value=oprg.opensolaris.category.2008:Development/System
 set name=org.opensolaris.nodepend value=true
 set name=variant.arch value=$(ARCH)
 dir path=usr group=sys
 dir path=usr/lib
+dir path=usr/lib/help
+dir path=usr/lib/help/auths
+dir path=usr/lib/help/auths/locale
 dir path=usr/lib/locale
 dir path=usr/lib/locale/C
 dir path=usr/lib/locale/C/LC_MESSAGES
-file path=usr/lib/locale/C/LC_MESSAGES/ILLUMOS_AUDIO_CMD.po group=sys
+file path=usr/lib/help/auths/locale/DevCDRW.html
+file path=usr/lib/locale/C/LC_MESSAGES/ILLUMOS_HAL_CMD.po group=sys
 license lic_CDDL license=lic_CDDL

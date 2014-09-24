@@ -227,7 +227,7 @@ objs/%.o pics/%.o: %.cc
 .PRECIOUS: $(LIBS)
 
 # Define the majority text domain in this directory.
-TEXT_DOMAIN= ILLUMOS_AUDIO_LIB
+TEXT_DOMAIN= ILLUMOS_HAL_LIB
 
 $(ROOTMAN3)/%: %.sunman
 	$(INS.rename)

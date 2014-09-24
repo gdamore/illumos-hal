@@ -234,10 +234,6 @@ MACH32=		$(MACH32_1:i386=i86)
 sparc_BUILD64=
 i386_BUILD64=
 BUILD64=	$($(MACH)_BUILD64)
-#
-# For legacy this legacy stuff, don't build 64-bit.  Nobody needs it.
-#
-BUILD64=	$(POUND_SIGN)
 
 #
 # C compiler mode. Future compilers may change the default on us,
@@ -755,7 +751,7 @@ $(__GNUC)sparc_CCC=	$(ONBLD_TOOLS)/bin/$(MACH)/cw -_g++
 sparc_CPP=		/usr/ccs/lib/cpp
 sparc_AS=		/usr/ccs/bin/as -xregsym=no
 sparc_LD=		/usr/ccs/bin/ld
-sparc_LINT=		$(SPRO_ROOT)/sunstudio12.1/bin/lint
+sparc_LINT=		$(SETALTUNAME) $(SPRO_ROOT)/sunstudio12.1/bin/lint
 
 sparcv9_CC=		$(ONBLD_TOOLS)/bin/$(MACH)/cw -_cc
 $(__GNUC64)sparcv9_CC=	$(ONBLD_TOOLS)/bin/$(MACH)/cw -_gcc
@@ -764,7 +760,7 @@ $(__GNUC64)sparcv9_CCC=	$(ONBLD_TOOLS)/bin/$(MACH)/cw -_g++
 sparcv9_CPP=		/usr/ccs/lib/cpp
 sparcv9_AS=		/usr/ccs/bin/as -xregsym=no
 sparcv9_LD=		/usr/ccs/bin/ld
-sparcv9_LINT=		$(SPRO_ROOT)/sunstudio12.1/bin/lint
+sparcv9_LINT=		$(SETALTUNAME) $(SPRO_ROOT)/sunstudio12.1/bin/lint
 
 i386_CC=		$(ONBLD_TOOLS)/bin/$(MACH)/cw -_cc
 $(__GNUC)i386_CC=	$(ONBLD_TOOLS)/bin/$(MACH)/cw -_gcc
@@ -774,7 +770,7 @@ i386_CPP=		/usr/ccs/lib/cpp
 i386_AS=		/usr/ccs/bin/as
 $(__GNUC)i386_AS=	$(ONBLD_TOOLS)/bin/$(MACH)/aw
 i386_LD=		/usr/ccs/bin/ld
-i386_LINT=		$(SPRO_ROOT)/sunstudio12.1/bin/lint
+i386_LINT=		$(SETALTUNAME) $(SPRO_ROOT)/sunstudio12.1/bin/lint
 
 amd64_CC=		$(ONBLD_TOOLS)/bin/$(MACH)/cw -_cc
 $(__GNUC64)amd64_CC=	$(ONBLD_TOOLS)/bin/$(MACH)/cw -_gcc
@@ -783,7 +779,7 @@ $(__GNUC64)amd64_CCC=	$(ONBLD_TOOLS)/bin/$(MACH)/cw -_g++
 amd64_CPP=		/usr/ccs/lib/cpp
 amd64_AS=		$(ONBLD_TOOLS)/bin/$(MACH)/aw
 amd64_LD=		/usr/ccs/bin/ld
-amd64_LINT=		$(SPRO_ROOT)/sunstudio12.1/bin/lint
+amd64_LINT=		$(SETALTUNAME) $(SPRO_ROOT)/sunstudio12.1/bin/lint
 
 NATIVECC=		$($(NATIVE_MACH)_CC)
 NATIVECCC=		$($(NATIVE_MACH)_CCC)
@@ -934,7 +930,7 @@ ELFSIGN_OBJECT=	$(ELFSIGN_O)
 #	PATCH_DATE	Date the patch was created, if this is blank it
 #			will default to the RELEASE_DATE
 #
-SYSNAME=	illumos-audio
+SYSNAME=	illumos-hal
 RELEASE_MAJOR=	0
 RELEASE_MINOR=	9
 RELEASE_MICRO=	0

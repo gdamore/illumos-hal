@@ -66,16 +66,30 @@ DIRS= \
 	/etc/hal/fdi/preprobe/10osvendor \
 	/etc/hal/fdi/preprobe/20thirdparty \
 	/etc/hal/fdi/preprobe/30user \
+	/lib \
+	/lib/svc \
+	/lib/svc/method \
 	/usr  \
 	/usr/bin \
+	/usr/sbin \
 	/usr/share \
+	/usr/share/lib \
+	/usr/share/lib/xml \
+	/usr/share/lib/xml/dtd \
 	/usr/share/man \
 	/usr/share/man/man1 \
+	/usr/share/man/man1m \
+	/usr/share/man/man3lib \
+	/usr/share/man/man3volmgt \
+	/usr/share/man/man4 \
+	/usr/share/man/man5 \
 	/usr/include \
 	/usr/include/hal \
 	/usr/include/libpolkit \
 	/usr/lib \
-	/usr/lib/hal
+	/usr/lib/amd64 \
+	/usr/lib/hal \
+	/usr/lib/hal/illumos
 
 
 sparcv9_DIRS64=

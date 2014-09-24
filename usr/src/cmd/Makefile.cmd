@@ -79,10 +79,6 @@ ROOTMAN3=	$(ROOTMAN)/man3
 #
 ROOTCMDDIR=	$(ROOT)/__nonexistent_directory__
 
-ROOTSHAUDIO=	$(ROOT)/usr/share/audio
-ROOTAUDIOSAMP=	$(ROOTSHAUDIO)/samples
-ROOTAUDIOSAMPAU=$(ROOTAUDIOSAMP)/au
-
 ISAEXEC=	$(ROOT)/usr/lib/isaexec
 PLATEXEC=	$(ROOT)/usr/lib/platexec
 
@@ -135,7 +131,16 @@ ROOTSVC=			$(ROOT)/lib/svc
 ROOTETCSVC=			$(ROOT)/etc/svc
 
 ROOTSVCMANIFEST=		$(ROOTSVC)/manifest
+ROOTSVCMILESTONE=		$(ROOTSVCMANIFEST)/milestone
+ROOTSVCDEVICE=			$(ROOTSVCMANIFEST)/device
+ROOTSVCSYSTEM=			$(ROOTSVCMANIFEST)/system
+ROOTSVCSYSTEMDEVICE=		$(ROOTSVCSYSTEM)/device
+ROOTSVCSYSTEMFILESYSTEM=	$(ROOTSVCSYSTEM)/filesystem
+ROOTSVCNETWORK=			$(ROOTSVCMANIFEST)/network
+ROOTSVCPLATFORM=		$(ROOTSVCMANIFEST)/platform
+ROOTSVCAPPLICATION=		$(ROOTSVCMANIFEST)/application
 ROOTSVCPROFILE=			$(ROOTETCSVC)/profile
+ROOTSVCAPPLICATION=		$(ROOTSVCMANIFEST)/application
 
 #
 # Commands Makefiles delivering a manifest are expected to define MANIFEST.
@@ -208,6 +213,9 @@ $(ROOTUSRSBIN32)/%: %
 $(ROOTUSRSBIN64)/%: %
 	$(INS.file)
 
+$(ROOTLIBSVCMETHOD)/%: %
+	$(INS.file)
+
 $(ROOTETC)/%: %
 	$(INS.file)
 
@@ -259,7 +267,7 @@ $(ROOTMAN3)/%: %.sunman
 	$(POST_PROCESS)
 
 # Define the majority text domain in this directory.
-TEXT_DOMAIN= ILLUMOS_AUDIO_CMD
+TEXT_DOMAIN= ILLUMOS_HAL_CMD
 
 CLOBBERFILES += $(XPG4) $(XPG6) $(DCFILE)
 

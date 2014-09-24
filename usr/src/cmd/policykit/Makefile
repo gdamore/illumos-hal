@@ -18,15 +18,38 @@
 #
 # CDDL HEADER END
 #
-
-# Copyright 2014 Garrett D'Amore <garrett@damore.org>
 #
-# Copyright 2010 Sun Microsystems, Inc.  All rights reserved.
+# Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
 # Use is subject to license terms.
 #
 
-set name=pkg.fmri value=pkg:/consolidation/audio-incorporation@$(PKGVERS)
-set name=variant.arch value=$(ARCH)
-set name=pkg.description value="This group package installs all packages from the audio consolidation."
-set name=pkg.summary value="Audio consolidation group package"
-<include packages.redist.current>
+PROG =	polkit-is-privileged
+
+SRCS =	$(PROG:%=%.c)
+
+include ../Makefile.cmd
+include $(SRC)/lib/policykit/Makefile.policykit
+
+LDLIBS +=	-lpolkit $(POLICYKIT_GLIB_LDLIBS)
+
+CPPFLAGS +=	-I$(ROOT)/usr/include/libpolkit
+CPPFLAGS +=	$(POLICYKIT_DBUS_CPPFLAGS) $(POLICYKIT_GLIB_CPPFLAGS)
+CPPFLAGS +=	-DPACKAGE_VERSION=\"$(POLICYKIT_VERSION)\"
+C99MODE =	$(C99_ENABLE)
+
+CERRWARN +=	-_gcc=-Wno-unused-variable
+
+ROOTUSRSBINPROG =	$(PROG:%=$(ROOTUSRSBIN)/%)
+
+.KEEP_STATE:
+
+all: $(PROG)
+
+install: all $(ROOTUSRSBINPROG)
+
+clean:
+	$(RM) $(CLEANFILES)
+
+FRC:
+
+include ../Makefile.targ

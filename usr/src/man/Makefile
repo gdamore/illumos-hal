@@ -15,7 +15,13 @@
 # Copyright 2014 Garrett D'Amore <garrett@damore.org>
 #
 
-SUBDIRS=	man1
+SUBDIRS=	\
+		man1 \
+		man1m \
+		man3lib \
+		man3volmgt \
+		man4 \
+		man5
 
 .PARALLEL: $(SUBDIRS)
 

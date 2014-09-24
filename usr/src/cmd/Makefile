@@ -47,7 +47,15 @@ include ../Makefile.master
 FIRST_SUBDIRS=
 
 COMMON_SUBDIRS=		\
-	hal
+	hal		\
+	cdrw		\
+	eject		\
+	policykit	\
+	rmformat	\
+	rmmount		\
+	rmvolmgr	\
+	volcheck	\
+	volrmmount
 
 i386_SUBDIRS=
 
@@ -58,7 +66,13 @@ sparc_SUBDIRS=
 # (see previous comment about 'lp'.)
 #
 MSGSUBDIRS=		\
-	audio
+	cdrw		\
+	eject		\
+	rmformat	\
+	rmmount		\
+	rmvolmgr	\
+	volcheck	\
+	volrmmount
 
 sparc_MSGSUBDIRS=
 

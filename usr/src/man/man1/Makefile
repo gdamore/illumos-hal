@@ -20,14 +20,20 @@ include		$(SRC)/Makefile.master
 MANSECT= 	1
 
 MANFILES=	\
-	 	audioconvert.1			\
-	 	audioplay.1			\
-	 	audiorecord.1
+		cdrw.1				\
+		eject.1				\
+		rmformat.1			\
+		rmmount.1			\
+	 	volcheck.1			\
+	 	volrmmount.1
 
-MANLINKS=
+MANLINKS=	rmumount.1
+
+rmumount.1	:= LINKSRC = rmmount.1
 
 .KEEP_STATE:
 
 include		$(SRC)/man/Makefile.man
 
 install:	$(ROOTMANFILES) $(ROOTMANLINKS)
+

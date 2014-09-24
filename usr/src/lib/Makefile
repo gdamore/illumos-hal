@@ -47,6 +47,8 @@ include ../Makefile.master
 .PARALLEL:
 
 SUBDIRS=	\
+	auths	\
+	libvolmgt \
 	policykit \
 	hal
 
@@ -65,7 +67,8 @@ NOWAIT_SUBDIRS= $(SUBDIRS:.WAIT=)
 
 DCSUBDIRS =
 
-MSGSUBDIRS=
+MSGSUBDIRS=	\
+	auths
 
 MSGSUBDIRS += \
 	$($(MACH)_MSGSUBDIRS)
@@ -76,6 +79,7 @@ i386_MSGSUBDIRS=
 
 HDRSUBDIRS=		\
 	$($(MACH)_HDRSUBDIRS) \
+	libvolmgt \
 	policykit \
 	hal
 
