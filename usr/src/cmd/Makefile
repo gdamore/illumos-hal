@@ -50,6 +50,7 @@ COMMON_SUBDIRS=		\
 	hal		\
 	cdrw		\
 	eject		\
+	fdformat	\
 	policykit	\
 	rmformat	\
 	rmmount		\

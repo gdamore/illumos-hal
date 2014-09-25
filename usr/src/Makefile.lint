@@ -30,7 +30,11 @@ include Makefile.master
 # As pieces are made lint-clean, add them here so the nightly build
 # can be used to keep them that way.
 #
-COMMON_SUBDIRS = cmd/eject cmd/fdformat cmd/rmformat
+COMMON_SUBDIRS = \
+		cmd/cdrw \
+		cmd/eject \
+		cmd/fdformat \
+		cmd/rmformat
 
 i386_SUBDIRS= 
 

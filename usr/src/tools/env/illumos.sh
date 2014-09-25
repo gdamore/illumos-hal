@@ -110,7 +110,7 @@ ONBLD_BIN='/opt/onbld/bin'
 export PARENT_WS=''
 
 # CLONE_WS is the workspace nightly should do a bringover from.
-export CLONE_WS='git@bitbucket.org:gdamore/illumos-audio.git'
+export CLONE_WS='git@bitbucket.org:gdamore/illumos-hal.git'
 
 # The bringover, if any, is done as STAFFER.
 # Set STAFFER to your own login as gatekeeper or developer
@@ -197,7 +197,7 @@ export UT_NO_USAGE_TRACKING='1'
 # exists to make it easier to test new versions of the compiler.
 export BUILD_TOOLS='/opt'
 export ONBLD_TOOLS='/opt/onbld'
-export SPRO_ROOT='/opt/sunstudio12.1'
+export SPRO_ROOT='/opt/SUNWspro'
 export SPRO_VROOT="$SPRO_ROOT"
 
 # This goes along with lint - it is a series of the form "A [y|n]" which
@@ -220,7 +220,8 @@ export SPRO_VROOT="$SPRO_ROOT"
 #POST_NIGHTLY=
 
 # Workaround for busted pkgdepend.
-# PKGDEPEND=/usr/bin/puname -S pkgdepend
+# export PKGDEPEND="/usr/bin/puname -S pkgdepend"
+# export SETALTUNAME="/usr/bin/puname -S"
 
 # This is optional, but we don't need shadow compilation.  Only reenable
 # if you have a suitable version of Solaris Studio installed.
