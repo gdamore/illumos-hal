@@ -18,8 +18,6 @@
 SUBDIRS=	\
 		man1 \
 		man1m \
-		man3lib \
-		man3volmgt \
 		man4 \
 		man5
 

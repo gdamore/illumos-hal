@@ -49,8 +49,6 @@ FIRST_SUBDIRS=
 COMMON_SUBDIRS=		\
 	hal		\
 	cdrw		\
-	eject		\
-	fdformat	\
 	policykit	\
 	rmformat	\
 	rmmount		\
@@ -68,7 +66,6 @@ sparc_SUBDIRS=
 #
 MSGSUBDIRS=		\
 	cdrw		\
-	eject		\
 	rmformat	\
 	rmmount		\
 	rmvolmgr	\

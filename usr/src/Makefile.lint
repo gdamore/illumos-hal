@@ -32,8 +32,6 @@ include Makefile.master
 #
 COMMON_SUBDIRS = \
 		cmd/cdrw \
-		cmd/eject \
-		cmd/fdformat \
 		cmd/rmformat
 
 i386_SUBDIRS= 

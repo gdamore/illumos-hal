@@ -21,8 +21,6 @@ MANSECT= 	1
 
 MANFILES=	\
 		cdrw.1				\
-		eject.1				\
-		fdformat.1			\
 		rmformat.1			\
 		rmmount.1			\
 	 	volcheck.1			\
